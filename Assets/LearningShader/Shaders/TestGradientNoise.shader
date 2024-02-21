@@ -12,7 +12,7 @@ Shader "LearningShader/TreeMovingVertex"
     {
         Tags { "RenderType"="Opaque" }
         LOD 100
-        AlphaToMask On
+        Blend SrcAlpha OneMinusSrcAlpha
 
         Pass
         {
@@ -73,13 +73,13 @@ Shader "LearningShader/TreeMovingVertex"
                 variable.y+=_Speed*_wave_direction.y*_Time.yy;
                 Unity_GradientNoise_float(variable.xy,_WaveScale.x,variable.x);
                 Unity_GradientNoise_float(variable.xy,_WaveScale.y,variable.y);
-                float magniture=sqrt(pow(variable.x,2)+pow(variable.y,5));
+                float magniture=sqrt(pow(variable.x,2)+pow(variable.y,2));
                 variable.x*=magniture;
                 variable.y*=magniture;
                 if(v.vertex.y>_RangeYBeAffect)
                 {
-                v.vertex.x+=v.vertex.x*(variable.x);
-                v.vertex.y+= v.vertex.y*(variable.y);
+                    v.vertex.x+=v.vertex.x*(variable.x);
+                    v.vertex.y+= v.vertex.y*(variable.y);
                 }
                 i.vertex = UnityObjectToClipPos(v.vertex);
                 return i;

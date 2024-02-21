@@ -7,17 +7,16 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CrackedIce_BIRP
-  m_Shader: {fileID: 4800000, guid: 9b66a5294a0897a4c96f2a05a7d7c0ed, type: 3}
+  m_Name: TestTexLod
+  m_Shader: {fileID: 4800000, guid: 03d06cf234bb9564aa6a92cfa43fdc30, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _SPECULAR_OFF
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -26,10 +25,6 @@ Material:
     m_TexEnvs:
     - _BumpMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Cube:
-        m_Texture: {fileID: 8900000, guid: 05e2602cc8df35946b721efcb6111b57, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -48,9 +43,21 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: e6cdd9e4add94c94ca46b44a1461f0b9, type: 3}
+    - _Line:
+        m_Texture: {fileID: 2800000, guid: f0b3395bed70b0743b8ab473864792ba, type: 3}
         m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Lines:
+        m_Texture: {fileID: 2800000, guid: d7432be1a9f62264896907d5deec49ac, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 16b3a20e3dc1c2c4d9ebed246b17d824, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTexure:
+        m_Texture: {fileID: 2800000, guid: 7353480230888974fb02afe6b39ae1f7, type: 3}
+        m_Scale: {x: 0.5, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -64,49 +71,47 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _TangentMap:
-        m_Texture: {fileID: 2800000, guid: 186c72b21dc217e4eb2c1d98132cb83d, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AmbientFactor: 0.149
-    - _AnisoFactor: 0.582
-    - _AnisoU: 1
-    - _AnisoV: 1
+    - _Animate: -0.72
+    - _AnimateY: 0.5
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _Detail: 1
     - _DetailNormalMapScale: 1
-    - _Diffuse: 1
+    - _Displacement: 0.285
     - _DstBlend: 0
-    - _EmissionPower: 0
-    - _FresnelFactor: 0.525
-    - _FresnelPower: 1.71
+    - _FadeAlphaRatio: 2
+    - _FillAmount: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Iterations: 50
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OffsetScale: 0.2
+    - _Out: 0.1
     - _Parallax: 0.02
-    - _ReflectionExposure: 1
-    - _ReflectionFactor: 0.356
-    - _RefractionFactor: 0
-    - _RefractiveIndex: 0
+    - _RangeYBeAffect: 0.71
+    - _Rim: 0
+    - _RimPower: 0
+    - _ScaleXTexture: 35
+    - _Sections: 10
     - _SmoothnessTextureChannel: 0
-    - _Specular: 0
-    - _SpecularFactor: 1
     - _SpecularHighlights: 1
-    - _SpecularPower: 200
+    - _SpeedX: 0.46
+    - _SpeedY: 0.25
     - _SrcBlend: 1
     - _UVSec: 0
+    - _WobbleX: 0
+    - _WobbleZ: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorBase: {r: 0, g: 0.16981131, b: 0.029333567, a: 1}
-    - _ColorLight: {r: 0.7315707, g: 1, b: 0, a: 1}
+    - _AnimateXY: {r: -0.82, g: 0, b: 0, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 0.3529412}
+    - _ColorB: {r: 0.87058824, g: 1, b: 0, a: 1}
+    - _ColorT: {r: 0, g: 0.13333334, b: 0.08627451, a: 1}
+    - _Colour: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TopColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
