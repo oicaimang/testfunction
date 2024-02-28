@@ -20,6 +20,7 @@ public class Spawner : MonoBehaviour
             batchIndexNum++;
             if (batchIndexNum >= 1000)
             {
+                Debug.Log("split");
                 batches.Add(currBatch);
                 currBatch = BuildNewBatch();
                 batchIndexNum = 0;

@@ -4,7 +4,7 @@ Shader "Unlit/OutlineImageShader"
     {
         _MainTex ("Texture", 2D) = "white" {}
         _ScaleUV("ScaleUV",Range(1, 2)) = 1.1 
-        _Color("Color", Color) = (0,0,0)
+        _Color("Color", Color) = (0,0,0,0)
         _Emission("Emission",Range(1,100))=1
     }
     SubShader

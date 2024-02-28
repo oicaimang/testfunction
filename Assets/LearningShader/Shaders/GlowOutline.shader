@@ -2,7 +2,6 @@ Shader "UI/GlowOutline"
 {
     Properties
     {
-
         _Intensity("Intensity",Range(1,10))=1
         _Radius ("Radius", Range(0.0, 1)) = 0.3
         _Smooth ("Smooth", Range(0.0, 0.5)) = 0.01
@@ -51,9 +50,13 @@ Shader "UI/GlowOutline"
                 float c = length(p - center);
                 return smoothstep(c - smooth, c + smooth, radius);
             }
+            float clamp(float maxValue, float value,float minValue)
+            {
+                return max(minValue,min(value,maxValue));
+            }
             fixed4 frag (v2f i) : SV_Target
             {
-                float4 baseColor = tex2D(_MainTex, i.uv) * i.color;
+                float4 baseColor = tex2D(_MainTex, i.uv);
                 float2 uvStep = ddx(i.uv);
                 fixed4 outline = tex2D(_MainTex, i.uv) *_Intensity;
                 fixed4 outlineColor=_Color;
