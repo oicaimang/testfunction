@@ -13,7 +13,7 @@ Shader "LearningShader/Flow"
         Tags { "RenderType"="Opaque" }
         LOD 100
         Blend SrcAlpha OneMinusSrcAlpha
-
+        ZWrite Off
         Pass
         {
             CGPROGRAM
