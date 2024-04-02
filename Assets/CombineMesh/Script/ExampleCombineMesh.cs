@@ -17,7 +17,7 @@ public class ExampleCombineMesh : MonoBehaviour
         {
             combine[i].mesh = meshFilters[i].sharedMesh;
             combine[i].transform = meshFilters[i].transform.localToWorldMatrix;
-            meshFilters[i].gameObject.SetActive(false);
+            // meshFilters[i].gameObject.SetActive(false);
 
             i++;
         }
@@ -26,6 +26,7 @@ public class ExampleCombineMesh : MonoBehaviour
         mesh.CombineMeshes(combine);
         transform.GetComponent<MeshFilter>().sharedMesh = mesh;
         transform.gameObject.SetActive(true);
+        this.enabled = false;
     }
 
 }

@@ -370,6 +370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestSpawnObject
       objectReference: {fileID: 0}
+    - target: {fileID: 1766376996593114620, guid: 506afd85eab6456409dc8e32de4bee2d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8593403776968956139, guid: 506afd85eab6456409dc8e32de4bee2d, type: 3}
       propertyPath: m_RootOrder
       value: 3
