@@ -1,4 +1,4 @@
-Optimization size built:
+######### Optimization size built:
 Prefab :
 - Make Prefabs in Level reference from Prefab in Asset
 - note:
@@ -17,3 +17,8 @@ Model Anim:
 - Anim is also compress size because properties -
 Sound:
 - Compress size like example link: https://codethunder978933933.wordpress.com/2020/08/24/toi-uu-audio-asset-trong-unity/
+
+######## Some note about draw call
+- Create sprite Atlas to group all decor texture in level - one draw for all
+- if need using heal progress - use only one canvas for all to avoid some dynamic draw
+- if using sorting by axis y - avoid group texure
