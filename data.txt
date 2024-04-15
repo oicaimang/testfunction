@@ -1,0 +1,2 @@
+﻿Xuanthulab.net -  Xin chào các bạn! 
+Ví dụ - ghi file text bằng stream
