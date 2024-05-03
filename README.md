@@ -22,5 +22,6 @@ Sound:
 - Create sprite Atlas to group all decor texture in level - one draw for all
 - if need using heal progress - use only one canvas for all to avoid some dynamic draw
 - if using sorting by axis y - avoid group texure
+
 ######## Error in Mono build:
 - splash screen be flickring after blur
