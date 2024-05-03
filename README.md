@@ -24,4 +24,4 @@ Sound:
 - if using sorting by axis y - avoid group texure
 
 ######## Error in Mono build:
-- splash screen be flickring after blur
+- splash screen be flickreing after blur
