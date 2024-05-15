@@ -4,10 +4,10 @@ Shader "LearningShader/BlendShaders"
     {
         _MainTex ("Texture", 2D) = "white" {}
         _Color("Color", Color)=(1,1,1,1)
-        [Enum(UnityEngine.Rendering.BlendMode)]
-        _SrcFactor("Src Factor", Float)=5
-        [Enum(UnityEngine.Rendering.BlendMode)]
-        _DstFactor("Dst Factor", Float)=10
+        // [Enum(UnityEngine.Rendering.BlendMode)]
+        // _SrcFactor("Src Factor", Float)=5
+        // [Enum(UnityEngine.Rendering.BlendMode)]
+        // _DstFactor("Dst Factor", Float)=10
         [Enum(UnityEngine.Rendering.BlendMode)]
         _Opp("Operation",Float)=5
     }
@@ -15,7 +15,7 @@ Shader "LearningShader/BlendShaders"
     {
         Tags { "RenderType"="Opaque" }
         LOD 100
-        Blend [_SrcFactor] [_DstFactor]
+        // Blend [_SrcFactor] [_DstFactor]
         BlendOp [_Opp]
 
         Pass

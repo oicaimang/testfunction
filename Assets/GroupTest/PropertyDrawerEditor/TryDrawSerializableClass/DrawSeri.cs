@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 
 using System;
 using System.Collections;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using UnityEditor;
+
 using UnityEngine;
 
 [CustomPropertyDrawer(typeof(RangeAttribute))]
@@ -89,4 +91,4 @@ public class TestDrawer : PropertyDrawer
     //     return enm.Current;
     // }
 }
-
+#endif

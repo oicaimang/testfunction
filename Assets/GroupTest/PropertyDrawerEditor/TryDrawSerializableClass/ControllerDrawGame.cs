@@ -1,4 +1,4 @@
-
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 
@@ -13,3 +13,4 @@ public class ControllerDrawGame : MonoBehaviour
         EditorUtility.SetDirty(this);
     }
 }
+#endif
