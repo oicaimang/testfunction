@@ -22,3 +22,6 @@ Sound:
 - Create sprite Atlas to group all decor texture in level - one draw for all
 - if need using heal progress - use only one canvas for all to avoid some dynamic draw
 - if using sorting by axis y - avoid group texure
+
+######## Error in Splash Screen:
+- splash screen be flickreing after blur - need to add one canvas or cam to empty scene if load scene by addressable
