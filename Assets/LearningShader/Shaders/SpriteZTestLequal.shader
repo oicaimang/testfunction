@@ -3,14 +3,19 @@ Shader "Unlit/SpriteZTestLEqual"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _StencilRef("Stencil Reference", Float) = 2.0
+        _StencilComp("Stencil Comparison", Float) = 8
     }
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        
+        Stencil {
+			Ref[_StencilRef]
+			Comp[_StencilComp]
+			Pass Replace
+		}
         Pass
         {
-            ZTest LEqual
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
