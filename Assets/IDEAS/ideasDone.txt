@@ -1,0 +1,1 @@
+Sử dụng terrain để tạo và xóa địa hình trong runtime. => ko khả thi. chỉ dùng cho dòng game chơi máy cấu hình cao
