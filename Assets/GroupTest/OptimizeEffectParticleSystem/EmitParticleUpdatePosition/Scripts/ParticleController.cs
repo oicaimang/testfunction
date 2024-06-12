@@ -10,50 +10,44 @@ public class ParticleController : MonoBehaviour
     public List<Transform> listPosEmit = new List<Transform>();
     public void StartParticle()
     {
-        StartCoroutine(UpdateSpawnParticle());
-    }
-    IEnumerator UpdateSpawnParticle()
-    {
-        yield return new WaitForSeconds(0.1f);
-        float countTimeWaitSpawn = 0;
-        foreach (var x in listPosEmit)
+        foreach (var particleData in currentParticleSystem)
         {
-            countTimeWaitSpawn += 0.01f;
-            StartCoroutine(WaitAndEmit(x.position, countTimeWaitSpawn));
+            StartCoroutine(UpdateSpawnParticle(particleData));
         }
-        StartCoroutine(UpdateSpawnParticle());
     }
-    IEnumerator WaitAndEmit(Vector3 posEmit, float timewait)
+    IEnumerator UpdateSpawnParticle(ParticleSystemData particleSystemData)
     {
-        yield return new WaitForSeconds(timewait);
+        yield return new WaitForSeconds(particleSystemData.RateSpawn);
         var emitParams = new ParticleSystem.EmitParams();
-        emitParams.position = new(posEmit.x, 0, posEmit.y);
-        foreach (var x in currentParticleSystem)
+        foreach (var posEmit in listPosEmit)
         {
-            emitParams.startColor = new Color(Color.white.r, Color.white.g, Color.white.b, x.ColorAlpha);
-
-            StartCoroutine(WaitNextEmit(x, emitParams));
+            if (particleSystemData.NumberEmit > 1)
+            {
+                for (int i = 0; i < particleSystemData.NumberEmit; i++)
+                {
+                    var centerPoint = particleSystemData.ParticleSystem.transform.InverseTransformPoint(posEmit.position);
+                    var randomPos = (Vector2)centerPoint + UnityEngine.Random.insideUnitCircle * 0.2f;
+                    emitParams.startColor = new Color(Color.white.r, Color.white.g, Color.white.b, particleSystemData.ColorAlpha);
+                    emitParams.position = randomPos;
+                    particleSystemData.ParticleSystem.Emit(emitParams, 1);
+                }
+            }
+            else
+            {
+                var centerPoint = particleSystemData.ParticleSystem.transform.InverseTransformPoint(posEmit.position);
+                emitParams.startColor = new Color(Color.white.r, Color.white.g, Color.white.b, particleSystemData.ColorAlpha);
+                emitParams.position = centerPoint;
+                particleSystemData.ParticleSystem.Emit(emitParams, 1);
+            }
         }
+        StartCoroutine(UpdateSpawnParticle(particleSystemData));
     }
-    IEnumerator WaitNextEmit(ParticleSystemData particleSystemData, ParticleSystem.EmitParams emitParams)
-    {
-        float countTimeWaitSpawnOneEmitParam = 0;
-        countTimeWaitSpawnOneEmitParam += particleSystemData.RateSpawn;
-        yield return new WaitForSeconds(countTimeWaitSpawnOneEmitParam);
-        particleSystemData.ParticleSystem.Emit(emitParams, 1);
-    }
-    // public void ClearParticle()
-    // {
-    //     foreach (var x in listEmitParam)
-    //     {
-    //         Debug.Log(x.position);
-    //     }
-    // }
 }
 [Serializable]
 public class ParticleSystemData
 {
     public ParticleSystem ParticleSystem;
+    public int NumberEmit = 1;
     public float RateSpawn;
     public float ColorAlpha;
 }
