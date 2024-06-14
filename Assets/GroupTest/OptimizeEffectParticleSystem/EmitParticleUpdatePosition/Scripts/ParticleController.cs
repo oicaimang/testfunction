@@ -8,7 +8,7 @@ public class ParticleController : MonoBehaviour
     public List<ParticleSystem.EmitParams> listEmitParam = new List<ParticleSystem.EmitParams>();
     public List<ParticleSystemData> currentParticleSystem;
     public List<Transform> listPosEmit = new List<Transform>();
-    public void StartParticle()
+    public void Start()
     {
         foreach (var particleData in currentParticleSystem)
         {
