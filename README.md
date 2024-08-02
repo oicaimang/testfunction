@@ -27,3 +27,7 @@ Sound:
 
 ######## Error in Splash Screen:
 - splash screen be flickreing after blur - need to add one canvas or cam to empty scene if load scene by addressable
+######### Garbage Collection
+- Heap and stack...
+- Coroutine need to avoid using "new waitforsecond" -  garbage be created
+- Boxing is the term for what happens when a value-typed variable is used in place of a reference-typed variable
