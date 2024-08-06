@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Spawner : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Spawner : MonoBehaviour
     public Mesh objMesh;
     public Material objMat;
     private List<List<ObjData>> batches = new List<List<ObjData>>();
+    [SerializeField] LayerMask layerSelect;
     [SerializeField] private float timeCount = 0;
     // Start is called before the first frame update
     void Start()
@@ -30,13 +32,14 @@ public class Spawner : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         timeCount += Time.deltaTime;
         RenderBatches();
     }
     private void RenderBatches()
     {
+        Debug.Log(batches.Count);
         foreach (var batch in batches)
         {
             Graphics.DrawMeshInstanced(objMesh, 0, objMat, batch.Select((a) => a.matrix).ToList());

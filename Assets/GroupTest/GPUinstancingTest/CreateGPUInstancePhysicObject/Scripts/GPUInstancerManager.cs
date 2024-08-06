@@ -28,14 +28,18 @@ public class GPUInstancerManager : MonoBehaviour
     private void LateUpdate()
     {
         // UpdateBuffers(cameraData);
+        List<Matrix4x4> matrix = new();
         for (int i = 0; i < instances; i++)
         {
             if (gPUInstancerObjectCache[i] != null)
             {
-                Matrix4x4[] matrix = new Matrix4x4[] { gPUInstancerObjectCache[i].GetInstanceTransform(true).localToWorldMatrix };
-                Graphics.DrawMeshInstanced(objMesh, 0, objMat, matrix);
+                matrix.Add(gPUInstancerObjectCache[i].GetInstanceTransform(true).localToWorldMatrix);
+                // if call here => per i will draw 1 batch
+                // Graphics.DrawMeshInstanced(objMesh, 0, objMat, matrix);
             }
         }
+        Debug.Log(matrix.Count);
+        Graphics.DrawMeshInstanced(objMesh, 0, objMat, matrix.ToArray());
     }
     private void OnDrawGizmos()
     {

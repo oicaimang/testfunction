@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!21 &-8731823097798177425
+--- !u!21 &-7609363748852839421
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 1
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: icon_2 (1)
   m_EditorClassIdentifier: 
   hashCode: 586775158
-  material: {fileID: -8731823097798177425}
+  material: {fileID: -7609363748852839421}
   materialHashCode: 0
   m_Version: 1.1.0
   m_FaceInfo:
@@ -85,15 +85,15 @@ MonoBehaviour:
     m_Unicode: 65534
     m_GlyphIndex: 0
     m_Scale: 1
-    m_Name: test
-    m_HashCode: 4061558
+    m_Name: icon_2 (1)
+    m_HashCode: 586775158
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:
       m_Width: 512
       m_Height: 512
-      m_HorizontalBearingX: 0
-      m_HorizontalBearingY: 407.1
+      m_HorizontalBearingX: -256
+      m_HorizontalBearingY: 256
       m_HorizontalAdvance: 512
     m_GlyphRect:
       m_X: 0
